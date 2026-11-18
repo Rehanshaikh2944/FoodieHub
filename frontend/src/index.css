@@ -1,0 +1,105 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+:root {
+  --color-cream: #F7F1E8;
+  --color-green: #173B30;
+  --color-green-soft: #214D40;
+  --color-orange: #D76B40;
+  --color-orange-soft: #D78968;
+  --color-orange-deep: #B65534;
+  --color-charcoal: #1D2320;
+  --color-gold: #D6B65D;
+  --color-white: #FFFFFF;
+  --color-beige: #E9DED1;
+
+  --color-background: #F7F3EE;
+  --color-surface: #FFFFFF;
+  --color-surface-soft: #F2E9DF;
+  --color-card: #FFFDFB;
+  --color-text: #1D2A25;
+  --color-text-soft: #4B544F;
+  --color-primary: var(--color-orange);
+  --color-primary-dark: var(--color-orange-deep);
+  --color-secondary: var(--color-green);
+  --color-secondary-soft: var(--color-green-soft);
+  --color-highlight: var(--color-gold);
+  --color-border: var(--color-beige);
+  --color-button-text: var(--color-white);
+  --color-hover: var(--color-orange-deep);
+  --color-shadow: rgba(23, 59, 48, 0.12);
+  --color-shadow-strong: rgba(23, 59, 48, 0.2);
+  --color-success: #2D7A5B;
+  --color-success-soft: #E9F5EF;
+  --color-error: #C35142;
+  --color-error-soft: #FDF0EE;
+  --color-warning: #C7993D;
+  --color-info: #5C7C90;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
+  scroll-behavior: smooth;
+}
+
+html {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--color-background);
+  color: var(--color-text);
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--color-background);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(214, 182, 93, 0.7);
+  outline-offset: 2px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

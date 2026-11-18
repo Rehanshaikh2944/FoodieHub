@@ -1,0 +1,347 @@
+:root {
+  --admin-cream: #f8f4e9;
+  --admin-forest: #173b30;
+  --admin-orange: #c94f2d;
+  --admin-gold: #d6b65d;
+  --admin-charcoal: #25251f;
+  --admin-white: #ffffff;
+  --admin-beige: #e5dace;
+  --admin-surface: #f5f1ea;
+  --admin-soft-border: rgba(23, 59, 48, 0.08);
+  --admin-shadow: 0 25px 60px rgba(23, 59, 48, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--admin-surface);
+  color: var(--admin-charcoal);
+  font-family: 'Outfit', 'Segoe UI', sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.admin-app-shell {
+  min-height: 100vh;
+  background: linear-gradient(180deg, rgba(248, 244, 233, 0.9), rgba(245, 241, 234, 0.92));
+}
+
+.admin-body {
+  display: flex;
+  gap: 24px;
+  padding: 18px 24px 28px;
+}
+
+.admin-page {
+  flex: 1;
+  min-width: 0;
+}
+
+.admin-auth-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 32px 20px;
+  background: radial-gradient(circle at top, rgba(214, 182, 93, 0.16), transparent 35%),
+    linear-gradient(135deg, #f8f4e9 0%, #f3efe7 100%);
+}
+
+.Toastify__toast-container {
+  width: min(420px, calc(100vw - 24px));
+  padding: 0;
+}
+
+.Toastify__toast {
+  min-height: 78px;
+  padding: 0;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid rgba(23, 59, 48, 0.08);
+  box-shadow: 0 18px 40px rgba(23, 59, 48, 0.12);
+  overflow: hidden;
+  color: var(--admin-charcoal);
+  font-family: 'Outfit', 'Segoe UI', sans-serif;
+  animation: foodiehub-toast-in 0.28s ease;
+}
+
+.Toastify__toast-body {
+  margin: 0;
+  padding: 0;
+}
+
+.Toastify__toast-container .Toastify__toast-body > div:last-child {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 18px 14px;
+  line-height: 1.5;
+}
+
+.Toastify__toast--success {
+  background: rgba(255, 255, 255, 0.98);
+  border-left: 5px solid var(--admin-forest);
+}
+
+.Toastify__toast--error {
+  background: rgba(255, 255, 255, 0.98);
+  border-left: 5px solid var(--admin-orange);
+}
+
+.Toastify__toast--info,
+.Toastify__toast--warning {
+  background: rgba(255, 255, 255, 0.98);
+  border-left: 5px solid var(--admin-gold);
+}
+
+.Toastify__toast-icon {
+  width: 20px;
+  height: 20px;
+  margin: 2px 0 0;
+  flex-shrink: 0;
+}
+
+.Toastify__toast--success .Toastify__toast-icon svg path,
+.Toastify__toast--success .Toastify__toast-icon svg circle,
+.Toastify__toast--success .Toastify__toast-icon svg polyline,
+.Toastify__toast--success .Toastify__toast-icon svg line {
+  stroke: var(--admin-forest);
+}
+
+.Toastify__toast--error .Toastify__toast-icon svg path,
+.Toastify__toast--error .Toastify__toast-icon svg circle,
+.Toastify__toast--error .Toastify__toast-icon svg polyline,
+.Toastify__toast--error .Toastify__toast-icon svg line {
+  stroke: var(--admin-orange);
+}
+
+.Toastify__toast--info .Toastify__toast-icon svg path,
+.Toastify__toast--info .Toastify__toast-icon svg circle,
+.Toastify__toast--info .Toastify__toast-icon svg polyline,
+.Toastify__toast--info .Toastify__toast-icon svg line,
+.Toastify__toast--warning .Toastify__toast-icon svg path,
+.Toastify__toast--warning .Toastify__toast-icon svg circle,
+.Toastify__toast--warning .Toastify__toast-icon svg polyline,
+.Toastify__toast--warning .Toastify__toast-icon svg line {
+  stroke: var(--admin-gold);
+}
+
+.Toastify__toast-progress {
+  height: 3px !important;
+  border-radius: 0 0 18px 18px;
+  background: rgba(23, 59, 48, 0.1);
+}
+
+.Toastify__toast--success .Toastify__toast-progress {
+  background: rgba(23, 59, 48, 0.9);
+}
+
+.Toastify__toast--error .Toastify__toast-progress {
+  background: rgba(201, 79, 45, 0.9);
+}
+
+.Toastify__toast--info .Toastify__toast-progress,
+.Toastify__toast--warning .Toastify__toast-progress {
+  background: rgba(214, 182, 93, 0.9);
+}
+
+.foodiehub-toast-close {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: rgba(37, 37, 31, 0.52);
+  font-size: 1.35rem;
+  line-height: 1;
+  padding: 8px 10px 0 0;
+  cursor: pointer;
+}
+
+.foodiehub-toast-close:hover {
+  color: var(--admin-charcoal);
+}
+
+.Toastify__close-button {
+  align-self: flex-start;
+  opacity: 1;
+  margin: 10px 10px 0 0;
+}
+
+.Toastify__close-button > svg {
+  display: none;
+}
+
+@keyframes foodiehub-toast-in {
+  from {
+    opacity: 0;
+    transform: translate3d(16px, 0, 0) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@media (max-width: 600px) {
+  .Toastify__toast-container {
+    width: min(100vw - 16px, 100%);
+    left: 8px !important;
+    right: 8px !important;
+    bottom: 12px !important;
+    top: auto !important;
+  }
+
+  .Toastify__toast {
+    border-radius: 16px;
+  }
+}
+
+.admin-auth-panel {
+  width: min(100%, 460px);
+  padding: 32px;
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid var(--admin-soft-border);
+  border-radius: 28px;
+  box-shadow: var(--admin-shadow);
+  backdrop-filter: blur(10px);
+}
+
+.admin-auth-header {
+  margin-bottom: 24px;
+}
+
+.admin-kicker {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: var(--admin-orange);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.admin-auth-header h1 {
+  margin: 0;
+  color: var(--admin-charcoal);
+  font-size: clamp(2rem, 4vw, 2.7rem);
+  letter-spacing: -0.06em;
+}
+
+.admin-auth-header p {
+  margin: 10px 0 0;
+  color: rgba(37, 37, 31, 0.75);
+  line-height: 1.6;
+}
+
+.admin-auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.admin-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.admin-field-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.admin-field label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: rgba(37, 37, 31, 0.78);
+}
+
+.admin-field input {
+  width: 100%;
+  height: 48px;
+  padding: 0 14px;
+  border: 1px solid rgba(23, 59, 48, 0.08);
+  border-radius: 12px;
+  background: rgba(248, 244, 233, 0.8);
+  color: var(--admin-charcoal);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.admin-field input:focus {
+  border-color: rgba(201, 79, 45, 0.35);
+  box-shadow: 0 0 0 4px rgba(201, 79, 45, 0.08);
+}
+
+.admin-ghost-button,
+.admin-primary-button,
+.admin-logout,
+.admin-action-button,
+.admin-secondary-button {
+  border: none;
+  border-radius: 12px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+}
+
+.admin-ghost-button {
+  padding: 7px 10px;
+  background: rgba(23, 59, 48, 0.04);
+  color: var(--admin-forest);
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.admin-primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 20px;
+  background: linear-gradient(135deg, var(--admin-orange), #dc6d43);
+  color: var(--admin-white);
+  font-weight: 700;
+  box-shadow: 0 18px 30px rgba(201, 79, 45, 0.2);
+}
+
+.admin-primary-button:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.admin-ghost-button:hover,
+.admin-primary-button:hover,
+.admin-logout:hover,
+.admin-action-button:hover,
+.admin-secondary-button:hover {
+  transform: translateY(-1px);
+}
+
+.admin-logout {
+  padding: 10px 16px;
+  background: rgba(23, 59, 48, 0.04);
+  color: var(--admin-charcoal);
+  font-weight: 600;
+}
+
+@media (max-width: 760px) {
+  .admin-body {
+    flex-direction: column;
+    padding: 16px;
+  }
+
+  .admin-auth-panel {
+    padding: 24px 20px;
+  }
+}

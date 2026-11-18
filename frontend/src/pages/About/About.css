@@ -1,0 +1,148 @@
+.about-page {
+  padding: 45px 8% 80px;
+  background: var(--color-cream);
+  min-height: 70vh;
+}
+
+.about-hero {
+  max-width: 1100px;
+  margin: 0 auto 45px;
+}
+
+.about-hero h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: max(4vw, 45px);
+  line-height: 1.1;
+  color: var(--color-green);
+}
+
+.about-hero h1 span {
+  color: var(--color-orange);
+}
+
+.about-hero p {
+  margin-top: 22px;
+  max-width: 850px;
+  color: var(--color-charcoal);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.about-main {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 35px;
+  align-items: center;
+}
+
+.about-card {
+  min-height: 420px;
+  padding: 45px;
+  border-radius: 28px;
+  background: linear-gradient(135deg, var(--color-gold), var(--color-orange));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  box-shadow: 0 16px 34px rgba(23, 59, 48, 0.12);
+}
+
+.about-food-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 35px;
+  border: 4px solid rgba(255,255,255,0.6);
+}
+
+.about-card h2 {
+  margin: 0 0 18px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 42px;
+  color: var(--color-green);
+}
+
+.about-content h2 {
+  margin: 0 0 22px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 42px;
+  color: var(--color-green);
+}
+
+.about-content > p {
+  margin: 0 0 25px;
+  color: var(--color-charcoal);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.about-features {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.about-feature {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 20px;
+  background: var(--color-white);
+  border: 1px solid var(--color-beige);
+  border-radius: 17px;
+}
+
+.about-feature-icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--color-cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: var(--color-orange);
+}
+
+.about-feature h3 {
+  margin: 0 0 5px;
+  color: var(--color-green);
+  font-size: 17px;
+}
+
+.about-feature p {
+  margin: 0;
+  color: var(--color-charcoal);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+@media (max-width: 750px) {
+  .about-page {
+    padding: 35px 5% 60px;
+  }
+
+  .about-main {
+    grid-template-columns: 1fr;
+  }
+
+  .about-card {
+    min-height: 330px;
+    padding: 40px 30px;
+  }
+
+  .about-card h2,
+  .about-content h2 {
+    font-size: 34px;
+  }
+
+  .about-food-image {
+    width: 120px;
+    height: 120px;
+  }
+}

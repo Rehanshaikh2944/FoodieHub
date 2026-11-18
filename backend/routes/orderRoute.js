@@ -1,0 +1,10 @@
+import express from 'express';
+import { createOrder, getOrderStatus, listAllOrders, listMyOrders, updateOrderStatus } from '../controllers/orderController.js';
+import { optionalUser, requireAdmin, requireUser } from '../middleware/auth.js';
+const router = express.Router();
+router.post('/place', requireUser, createOrder);
+router.get('/my', requireUser, listMyOrders);
+router.get('/:id/status', optionalUser, getOrderStatus);
+router.get('/admin/all', requireAdmin, listAllOrders);
+router.patch('/admin/:id/status', requireAdmin, updateOrderStatus);
+export default router;
